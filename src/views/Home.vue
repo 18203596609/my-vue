@@ -1,18 +1,48 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <section id="home-page">
+    <HeaderVue />
+    <section class="cotent-area clearfix">
+      <div class="leftBar">
+        <LeftBar />
+      </div>
+      <div class="rightBar"></div>
+    </section>
+  </section>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import LeftBar from "@/components/leftBar.vue";
+import HeaderVue from "@/components/header.vue";
+import { Vue, Component } from "vue-property-decorator";
 
-export default {
-  name: 'Home',
+@Component({
+  name: "Home",
   components: {
-    HelloWorld
+    LeftBar,
+    HeaderVue
+  }
+})
+export default class Home extends Vue {}
+</script>
+<style lang="scss" scoped>
+@import "../assets/sass/public/pxToRem.scss";
+#home-page {
+  width: 100%;
+
+  .cotent-area {
+    width: 100%;
+    padding: 0 pxToRem(60);
+
+    .leftBar {
+      width: pxToRem(200);
+      float: left;
+    }
+
+    .rightBar{
+      width: calc(100% - 2rem);
+      float: left;
+      background: rebeccapurple;
+    }
   }
 }
-</script>
+</style>
