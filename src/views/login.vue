@@ -1,21 +1,31 @@
 <template>
   <section class="login-page">
     <el-form ref="form" :model="form" label-width="80px">
-      <h2 class='title'>自用系统</h2>
+      <h2 class="title">自用系统</h2>
       <el-form-item label="用户名">
         <el-input v-model="form.name" placeholder="请输入用户名"></el-input>
       </el-form-item>
       <el-form-item label="密码">
-        <el-input v-model="form.password" placeholder="请输入密码" show-password></el-input>
+        <el-input
+          v-model="form.password"
+          placeholder="请输入密码"
+          show-password
+        ></el-input>
       </el-form-item>
-      <el-button type="primary" @click="onSubmit" :class="{forbid:!form.name && !form.password}">登陆</el-button>
+      <el-button
+        type="primary"
+        @click="onSubmit()"
+        :class="{ forbid: !form.name && !form.password }"
+        >登陆</el-button
+      >
     </el-form>
   </section>
 </template>
-<script lang='ts'>
+<script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import ElementUI from "element-ui";
 import { setTokenCookie } from "../utils/auth";
+import Http from "../utils/http";
 @Component
 export default class LoginComponent extends Vue {
   private form: any = {
@@ -23,9 +33,16 @@ export default class LoginComponent extends Vue {
     password: ""
   };
 
-  mounted() {}
+  mounted () {
+    Http.request({
+      url: "/static/mgb.json",
+      method: "get"
+    }).then(res => {
+      console.log(res);
+    });
+  }
 
-  private onSubmit() {
+  private onSubmit () {
     console.log(this.form);
     if (!this.form.name && !this.form.password) {
       return;
@@ -34,7 +51,7 @@ export default class LoginComponent extends Vue {
       this.$router.push({
         path: "/home"
       });
-      setTokenCookie('qwretrtyiuoip');
+      setTokenCookie("qwretrtyiuoip");
     } else {
       this.$alert("用户名或密码错误", {
         confirmButtonText: "确定"
@@ -59,7 +76,7 @@ export default class LoginComponent extends Vue {
   left: pxToRem(100);
   transform: translateY(-50%);
 
-  .title{
+  .title {
     margin-bottom: pxToRem(60);
   }
 

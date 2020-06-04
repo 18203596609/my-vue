@@ -10,6 +10,7 @@
   "dependencies": {
     "@types/js-cookie": "^2.2.6",
     "@types/uuid": "^7.0.3",
+    "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.1",
     "js-cookie": "^2.2.1",

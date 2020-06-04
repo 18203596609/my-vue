@@ -1,0 +1,178 @@
+{
+    "returnCode": 200,
+    "msg": null,
+    "data": [
+        {
+            "dataBatchDate": "2020-05-31",
+            "basicInfoModel": {
+                "color": null,
+                "category": null,
+                "lastModel": null,
+                "modelGlobal": null,
+                "partsLevel": null,
+                "qty": null,
+                "price": null,
+                "repairUsageRate": null,
+                "refurbishUsageRate": null,
+                "ltbdate": null,
+                "partsLifeCycle": "NONE",
+                "ifRecoverable": null,
+                "pdpversion": ""
+            },
+            "queryUnionModel": {
+                "countrys": [
+                    "India"
+                ],
+                "regions": [
+                    "India"
+                ],
+                "salesModels": [
+                    "PAA50000IN"
+                ],
+                "transceivers": [
+                    "SA78C22918"
+                ],
+                "models": [
+                    "Ashley"
+                ],
+                "topmostPns": [
+                    "5C18C10491"
+                ]
+            },
+            "pictureThumbs": null,
+            "forecastResult": [
+                {
+                    "projectId": "a649770300b84b4c8386831d774f60a7",
+                    "projectUnionCode": "06874a98a67526b8e49ed04f207646a7",
+                    "dataBatchDate": "2020-05-31",
+                    "predType": "MBG_PredType_Ltb_Shipment_Part",
+                    "predParams": {
+                        "predDate": "2020-05-31",
+                        "standardWarranty": 12
+                    },
+                    "queryUnionModel": {
+                        "countrys": [
+                            "India"
+                        ],
+                        "regions": [
+                            "India"
+                        ],
+                        "salesModels": [
+                            "PAA50000IN"
+                        ],
+                        "transceivers": [
+                            "SA78C22918"
+                        ],
+                        "models": [
+                            "Ashley"
+                        ],
+                        "topmostPns": [
+                            "5C18C10491"
+                        ]
+                    },
+                    "timeLines": [],
+                    "errorReason": "No IB, No Consumption"
+                },
+                {
+                    "projectId": "a649770300b84b4c8386831d774f60a7",
+                    "projectUnionCode": "06874a98a67526b8e49ed04f207646a7",
+                    "dataBatchDate": "2020-05-31",
+                    "predType": "MBG_PredType_Ltb_Shipment_Model",
+                    "predParams": {
+                        "predDate": "2020-05-31",
+                        "standardWarranty": 12
+                    },
+                    "queryUnionModel": {
+                        "countrys": [
+                            "India"
+                        ],
+                        "regions": [
+                            "India"
+                        ],
+                        "salesModels": [
+                            "PAA50000IN"
+                        ],
+                        "transceivers": [
+                            "SA78C22918"
+                        ],
+                        "models": [
+                            "Ashley"
+                        ],
+                        "topmostPns": [
+                            "5C18C10491"
+                        ]
+                    },
+                    "timeLines": [],
+                    "errorReason": "No IB, No Consumption"
+                },
+                {
+                    "projectId": "a649770300b84b4c8386831d774f60a7",
+                    "projectUnionCode": "06874a98a67526b8e49ed04f207646a7",
+                    "dataBatchDate": "2020-05-31",
+                    "predType": "MBG_PredType_Ltb_Activation_Part",
+                    "predParams": {
+                        "predDate": "2020-05-31",
+                        "standardWarranty": 12
+                    },
+                    "queryUnionModel": {
+                        "countrys": [
+                            "India"
+                        ],
+                        "regions": [
+                            "India"
+                        ],
+                        "salesModels": [
+                            "PAA50000IN"
+                        ],
+                        "transceivers": [
+                            "SA78C22918"
+                        ],
+                        "models": [
+                            "Ashley"
+                        ],
+                        "topmostPns": [
+                            "5C18C10491"
+                        ]
+                    },
+                    "timeLines": [],
+                    "errorReason": "No IB, No Consumption"
+                },
+                {
+                    "projectId": "a649770300b84b4c8386831d774f60a7",
+                    "projectUnionCode": "06874a98a67526b8e49ed04f207646a7",
+                    "dataBatchDate": "2020-05-31",
+                    "predType": "MBG_PredType_Ltb_Activation_Model",
+                    "predParams": {
+                        "predDate": "2020-05-31",
+                        "standardWarranty": 12
+                    },
+                    "queryUnionModel": {
+                        "countrys": [
+                            "India"
+                        ],
+                        "regions": [
+                            "India"
+                        ],
+                        "salesModels": [
+                            "PAA50000IN"
+                        ],
+                        "transceivers": [
+                            "SA78C22918"
+                        ],
+                        "models": [
+                            "Ashley"
+                        ],
+                        "topmostPns": [
+                            "5C18C10491"
+                        ]
+                    },
+                    "timeLines": [],
+                    "errorReason": "No IB, No Consumption"
+                }
+            ],
+            "predDate": "2020-05-31",
+            "projectUnionCode": "06874a98a67526b8e49ed04f207646a7",
+            "projectId": "a649770300b84b4c8386831d774f60a7"
+        }
+    ]
+}
