@@ -5,8 +5,8 @@ module.exports = {
   },
   'extends': [
     'plugin:vue/essential',
-    '@vue/standard',
-    '@vue/typescript/recommended'
+    // '@vue/standard',
+    // '@vue/typescript/recommended'
   ],
   parserOptions: {
     ecmaVersion: 2020
@@ -15,5 +15,6 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'semi': 0, // eslint不检查分号
+    'no-unused-vars': 'warn',//把该条提示信息转换成警告信息
   }
 }

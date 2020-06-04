@@ -1,77 +1,27 @@
 <template>
   <div id="sidebar-wrap">
-    <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+    <el-tree
+      :data="leftBarData"
+      :props="defaultProps"
+      @node-click="handleNodeClick"
+    ></el-tree>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
 export default class LeftBar extends Vue {
-  private data = [
-    {
-      label: "一级 1",
-      children: [
-        {
-          label: "二级 1-1",
-          children: [
-            {
-              label: "三级 1-1-1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      label: "一级 2",
-      children: [
-        {
-          label: "二级 2-1",
-          children: [
-            {
-              label: "三级 2-1-1"
-            }
-          ]
-        },
-        {
-          label: "二级 2-2",
-          children: [
-            {
-              label: "三级 2-2-1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      label: "一级 3",
-      children: [
-        {
-          label: "二级 3-1",
-          children: [
-            {
-              label: "三级 3-1-1"
-            }
-          ]
-        },
-        {
-          label: "二级 3-2",
-          children: [
-            {
-              label: "三级 3-2-1"
-            }
-          ]
-        }
-      ]
-    }
-  ];
+  @Prop({}) leftBarData: Array<any> = [];
+  private data = [];
+
   private defaultProps = {
     children: "children",
     label: "label"
   };
 
-  private handleNodeClick(data:any){
+  private handleNodeClick(data: any) {
     console.log(data);
   }
 }
@@ -79,18 +29,8 @@ export default class LeftBar extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+@import "../assets/sass/public/pxToRem.scss";
+// #sidebar-wrap {
+//   width: pxToRem(200);
+// }
 </style>

@@ -22,6 +22,15 @@ export const barList: any = [
         children: [{
           label: 'es6'
         }],
+      },
+      {
+        label:'vue',
+        children:[{
+          label:'语法'
+        },{
+          label:'配置问题',
+          name:'vueConfig',
+        }]
       }
     ]
   }

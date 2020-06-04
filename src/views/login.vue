@@ -22,21 +22,21 @@
   </section>
 </template>
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
-import ElementUI from "element-ui";
-import { setTokenCookie } from "../utils/auth";
-import Http from "../utils/http";
+import { Vue, Component } from 'vue-property-decorator';
+import ElementUI from 'element-ui';
+import { setTokenCookie } from '../utils/auth';
+import Http from '../utils/http';
 @Component
 export default class LoginComponent extends Vue {
   private form: any = {
-    name: "",
-    password: ""
+    name: '',
+    password: ''
   };
 
   mounted () {
     Http.request({
-      url: "/static/mgb.json",
-      method: "get"
+      url: '/static/mgb.json',
+      method: 'get'
     }).then(res => {
       console.log(res);
     });
@@ -47,14 +47,14 @@ export default class LoginComponent extends Vue {
     if (!this.form.name && !this.form.password) {
       return;
     }
-    if (this.form.name === "mm" && this.form.password === "123456") {
+    if (this.form.name === 'mm' && this.form.password === '123456') {
       this.$router.push({
-        path: "/home"
+        path: '/home'
       });
-      setTokenCookie("qwretrtyiuoip");
+      setTokenCookie('qwretrtyiuoip');
     } else {
-      this.$alert("用户名或密码错误", {
-        confirmButtonText: "确定"
+      this.$alert('用户名或密码错误', {
+        confirmButtonText: '确定'
       });
     }
   }
