@@ -8,28 +8,29 @@ export const barList: any = [
       {
         label: 'html',
         children: [{
-          label: 'dom'
+          label: 'dom',
+          component:'HtmlDom'
         }],
       },
       {
         label: 'css',
         children: [{
-          label: 'sass'
+          label: 'sass',
+          component:'CssSass'
         }],
       },
       {
         label: 'js',
         children: [{
-          label: 'es6'
+          label: 'es6',
+          component:'JsEs6'
         }],
       },
       {
         label:'vue',
         children:[{
-          label:'语法'
-        },{
-          label:'配置问题',
-          name:'vueConfig',
+          label:'配置',
+          component:'VueConfig',
         }]
       }
     ]

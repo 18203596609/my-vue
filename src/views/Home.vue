@@ -8,19 +8,14 @@
           display: leftBarData ? 'block' : 'none',
         }"
       >
-        <el-tree
-          :data="leftBarData"
-          :props="defaultProps"
-          @node-click="handleNodeClick"
-        ></el-tree>
+        <el-tree :data="leftBarData" @node-click="handleNodeClick"></el-tree>
       </div>
       <div class="rightBar">
-        <a
-          href="https://www.cnblogs.com/Sabo-dudu/p/12118689.html"
-          title="关闭eslint"
-          target="_blank"
-          >eslint</a
-        >
+        <!-- <ul v-if="rightComponent.length > 0">
+          <li v-for="(item, index) in rightComponent" :key="index">
+            <VueConfig />
+          </li>
+        </ul> -->
       </div>
     </section>
   </section>
@@ -29,6 +24,7 @@
 <script>
 import LeftBar from "@/components/leftBar.vue";
 import HeaderVue from "@/components/header.vue";
+import VueConfig from "@/components/vue/vueConfig.vue";
 import { Vue, Component } from "vue-property-decorator";
 import { barList } from "../components/barList";
 @Component({
@@ -39,13 +35,9 @@ import { barList } from "../components/barList";
   },
 })
 export default class Home extends Vue {
-  headData = barList || [];
-  leftBarData = "" || [];
-
-  defaultProps = {
-    children: "children",
-    label: "label"
-  };
+  headData = barList || []; // 头部目录
+  leftBarData = "" || []; // 侧边栏目录
+  rightComponent = []; // 右侧主内容区的组件名称
 
   mounted() {
     console.log(this.headData);
@@ -59,6 +51,9 @@ export default class Home extends Vue {
 
   handleNodeClick(data) {
     console.log(data);
+    if (data.children) {
+      this.rightComponent = data.children;
+    }
   }
 }
 </script>
@@ -76,7 +71,6 @@ export default class Home extends Vue {
     top: 0;
     left: 0;
     padding: pxToRem(72) pxToRem(60) 0;
-    margin-top: pxToRem(12);
     display: flex;
     flex-wrap: nowrap;
 
@@ -86,7 +80,8 @@ export default class Home extends Vue {
 
     .rightBar {
       width: 100%;
-      height: 300px;
+      border: slategrey solid 1px;
+      border-radius: pxToRem(10);
     }
   }
 }

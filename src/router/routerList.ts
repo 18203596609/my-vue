@@ -9,7 +9,15 @@ export const routes: Array<RouteConfig> = [
   {
     path: '/home',
     name: 'home',
-    component: () => import('../views/Home.vue')
+    component: () => import('../views/Home.vue'),
+    children:[{
+      path:'/home/foreEnd',
+      name:'foreEnd',
+      children:[{
+        path:'/home/foreEnd/html',
+        name:'foreEndHtml'
+      }]
+    }]
   },
   {
     path: '/about',
