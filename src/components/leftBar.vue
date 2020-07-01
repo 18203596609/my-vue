@@ -22,7 +22,7 @@ export default class LeftBar extends Vue {
   };
 
   private handleNodeClick(data: any) {
-    console.log(data);
+    console.log(data, "侧边栏");
   }
 }
 </script>

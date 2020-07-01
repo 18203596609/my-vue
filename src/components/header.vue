@@ -1,11 +1,11 @@
 <template>
   <section id="header-wrapper">
     <ul class="head-ul">
-      <li v-for="(item, index) in headData" :key="index">
+      <li v-for="(item, index) in data" :key="index">
         <div
           class="head-btn"
           :class="{ active: index === checkIndex }"
-          @click="checkbtn(index)"
+          @click="checkbtn(item, index)"
         >
           {{ item.title }}
         </div>
@@ -18,19 +18,19 @@
 </template>
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
+import { BarList } from "@/components/barList";
+import { setSession, getSession } from "@/utils/cookie";
 @Component
 export default class HeaderVue extends Vue {
-  @Prop({}) headData: any;
-  private checkIndex = 0;
-  private headArr = ["首页", "前端"];
+  private data: Array<any> = BarList;
+  private checkIndex: any = 0;
 
-  mounted() {
-    this.$emit("sidebarData", this.headData[this.checkIndex].sidebar);
-  }
-
-  private checkbtn(index: number) {
+  private checkbtn(item: any, index: number) {
+    setSession("headIndex", index);
     this.checkIndex = index;
-    this.$emit("sidebarData", this.headData[this.checkIndex].sidebar);
+    this.$router.push({
+      path: item.path
+    });
   }
 }
 </script>
