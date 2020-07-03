@@ -41,18 +41,33 @@ export default class extends Vue {
   position: relative;
   top: 0;
   left: 0;
-  padding: pxToRem(72) pxToRem(60) 0;
+  padding: pxToRem(20) pxToRem(60) 0;
   display: flex;
   flex-wrap: nowrap;
 
   .left-bar {
     width: pxToRem(200);
+    margin-right: 16px;
   }
 
   .right-bar {
     width: 100%;
-    border: slategrey solid 1px;
+    border: #eee solid 1px;
     border-radius: pxToRem(10);
+    box-shadow: 1px 2px 8px 3px rgba(172,172,172,0.09);
+    background: #fff;
+  }
+}
+</style>
+<style lang="scss">
+.content-list {
+  text-align: left;
+  .content {
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 18px;
+    color: #606266;
+    // font-weight: 600;
   }
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <section>
-    <ul>
-      <li v-for="(item, index) in data" :key="index">
-        <a :href="item.href" target='_blank'>{{ item.name }}</a>
+  <section class='html-page'>
+    <ul class='content-box'>
+      <li class='content-list' v-for="(item, index) in data" :key="index">
+        <a class='content' :href="item.href" target='_blank'>{{ item.name }}</a>
         <hr />
       </li>
     </ul>
